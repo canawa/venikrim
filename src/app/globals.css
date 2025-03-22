@@ -1,0 +1,209 @@
+
+body {
+  text-align: center;
+  margin: 0;
+  display:flex;
+  background-color: #ffffb5;
+  justify-content: center;
+  background-size: cover;
+  background-image: url("/background.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.header {
+  display: flex;
+  
+  align-items: center;
+  height: 12vh;
+  
+  background-color: #F4E6C1;
+}
+
+.cart {
+  width: 68vw;
+  height: 12vh;
+  min-height: 12vh;
+  text-align: right;
+  justify-content: center;
+  
+  text-decoration: none;
+}
+
+.buttonCart {
+  width: 15vw;
+  height: 6vh;
+  background-color: #c15f3c;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  border: 0;
+  font-size: 1.5rem;
+  margin-top: 3vh;
+  margin-right: 1vw;
+  box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+
+.about {
+  display: flex;
+  font-size: 1.5rem;
+  
+  width: 20vw;
+  height: 12vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-shadow: 0.2px 0.2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about:hover {
+  color: #28271d;
+  
+}
+
+.buttonCart:hover {
+  background-color: #28271d;
+  color: #F4E6C1;
+  cursor: pointer;
+  animation: bounce 0.5s ease-out;
+  
+}
+
+.logoImage {
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 1vw;
+
+}
+
+.logo {
+  width: 12vw;
+  height: 12vh;
+  display: flex;  
+ 
+}
+
+
+.logo:hover {
+  
+}
+.mainDiv {
+  justify-content: center;
+  height: 100vh;
+  width: 70vw;
+  background-color: #E8D8B9;
+  color: #2D3748;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    color: #2D3748;
+    width: 20vw;
+    margin: 1rem;
+    
+}
+
+textarea {
+  resize: none;
+  height: 25vh;
+  display : block;
+  
+}
+
+
+@media (max-width: 1650px) {
+  .about { 
+    margin: 3vw;
+  }
+  
+}
+
+@media (max-width: 1600px) {
+  .about {
+    margin: 4vw;
+  }
+  
+}
+
+@media (max-width:1400px) {
+  .about {
+    margin:4vw
+  }
+  body {
+    
+  }
+}
+@media (max-width: 1250px) {
+  .about {
+    margin: 6vw;
+  }
+}
+@media (max-width:1100px) {
+  .about {
+    font-size: 1rem;
+    margin: 2vw
+  }
+}
+
+@media (max-width: 1000px) {
+  .about {
+    font-size: 0.8rem;
+    margin: 3vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .about {
+    font-size: 0.8rem;
+    margin: 4vw;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .mainDiv {
+    width: 100vw;
+  }
+  .about {
+    font-size: 0.65rem;
+    padding-left: 22vw;
+  }
+  .buttonCart {
+    font-size: 1rem;
+    width: 25vw;
+    height: 5vh;
+  }
+  .cart {
+    
+  }
+}
+
+
+
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0); /* Начальное положение */
+  }
+  25% {
+    transform: translateY(-10px); /* Подпрыгивает вверх */
+  }
+  50% {
+    transform: translateY(0); /* Возвращается в исходное положение */
+  }
+  75% {
+    transform: translateY(-5px); /* Немного подпрыгивает снова */
+  }
+  100% {
+    transform: translateY(0); /* Возвращается в исходное положение */
+  }
+}
