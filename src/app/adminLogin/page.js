@@ -7,4 +7,4 @@ export default function adminLogin() {
       <AdminLogin/>
     </div>
   )
-}
+} 
