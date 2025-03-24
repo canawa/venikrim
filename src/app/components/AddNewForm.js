@@ -65,6 +65,7 @@ const AddNewForm = () => {
         console.error('Ошибка сохранения данных:', error)
       } else {
         alert('Товар успешно добавлен!')
+        console.log(data)
       }
     } catch (error) {
       console.error('Произошла ошибка:', error)
