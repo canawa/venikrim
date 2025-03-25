@@ -1,5 +1,6 @@
 import { Marmelad } from "next/font/google";
 import '../globals.css';
+import CallMeForm from "../components/callMeForm";
 
 const marmelad = Marmelad({
   subsets: ["latin", 'cyrillic'],
@@ -11,7 +12,7 @@ const marmelad = Marmelad({
 
 
 export const metadata = {
-  title: "Create Next App",
+  title: "Веникрым - Заказ",
   description: "Лучшие веники и мётлы в Крыму!",
 };
 
@@ -21,7 +22,7 @@ export default function orderLayout({ children }) {
     <html lang="en">
       <body
         className={marmelad.className}>
-          <div> <h1>Ваша корзина: </h1></div>
+          <div> <CallMeForm/></div>
         {children}
       </body>
     </html>

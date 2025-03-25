@@ -4,6 +4,11 @@ import supabase from "../components/Supabase";
 import { useEffect } from "react";
 import { set } from "react-hook-form";
 import { useRouter } from "next/navigation";
+import { Nunito } from "next/font/google";
+const marck  = Nunito({
+  subsets: ["latin", "cyrillic"],
+  weight: ["900"],
+});
 import Link from "next/link";
 
 export default function ProductPage({params}) {
@@ -42,7 +47,7 @@ fetchData()
         <h1>{product.Название}</h1>
         <h3 className="price">Цена: {product.Цена}₽</h3>
         <div className="buyInfo">
-        <h4 className="buyButton"> <Link className='link'href='/order'>КУПИТЬ</Link></h4>
+        <h4 className="buyButton"> <Link className='link'href='/order' ><span className={marck.className}>КУПИТЬ</span></Link></h4>
           <h4 className="inStock">• В наличии</h4>
         </div>
         </div>

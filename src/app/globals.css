@@ -49,11 +49,9 @@ body {
   border-radius: 12px;
 }
 
-
 .about {
   display: flex;
-  font-size: 1.5rem;
-  
+  font-size: 1.5rem; 
   width: 20vw;
   height: 12vh;
   justify-content: center;
@@ -64,7 +62,6 @@ body {
 
 .about:hover {
   color: #28271d;
-  
 }
 
 .buttonCart:hover {
@@ -77,7 +74,7 @@ body {
 
 .link {
   text-decoration: none;
-  color: black
+  color: #ffffff;
 }
 
 .logoImage {
@@ -87,14 +84,12 @@ body {
   align-items: center;
   text-align: center;
   margin-left: 1vw;
-
 }
 
 .logo {
   width: 12vw;
   height: 12vh;
   display: flex;  
- 
 }
 
 
@@ -106,16 +101,16 @@ body {
   width: 70vw;
   background-color: #E8D8B9;
   color: #2D3748;
-  
 }
 
 form {
     display: flex;
     flex-direction: column;
+    text-align: center;
     color: #2D3748;
     width: 20vw;
     margin: 1rem;
-    
+
 }
 
 textarea {
@@ -297,6 +292,7 @@ img {
   display: flex;
   flex-direction: row;
   align-items: center;
+  color: #f4e6c1;
   
 
 }
@@ -367,6 +363,101 @@ img {
   color: #5a5a5a;
   font-size: 0.8rem;
 }
+
+.callMeDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.callme-form {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 460px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: rgba(244, 230, 193, 0.3);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  color: #c15f3c;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px 20px;
+  border: 2px solid #e0d0b0;
+  border-radius: 10px;
+  font-size: 1rem;
+  background: #ffffb5;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #c15f3c;
+  box-shadow: 0 0 8px rgba(193, 95, 60, 0.2);
+}
+
+.form-textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background: #c15f3c;
+  color: white;
+  padding: 15px 40px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 1rem auto;
+  box-shadow: 0 4px 15px rgba(193, 95, 60, 0.3);
+}
+
+.submit-btn:hover {
+  background: #28271d;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .callme-form {
+    justify-content: center;
+    margin: 1rem;
+    padding: 1.5rem;
+    width: 250px;
+  }
+  
+  .form-title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .form-input {
+    font-size: 0.9rem;
+    width: 200px;
+    
+    padding-left: 3px;
+  }
+  .submit-btn {
+    width: 200px;
+    padding: 12px;
+  }
+}
+
 
 /* Мобильная адаптация */
 @media (max-width: 768px) {
