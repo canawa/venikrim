@@ -3,6 +3,7 @@ body {
   text-align: center;
   margin: 0;
   display:flex;
+  flex-direction: row;
   background-color: #ffffb5;
   justify-content: center;
   background-size: cover;
@@ -74,6 +75,10 @@ body {
   
 }
 
+.link {
+  text-decoration: none;
+}
+
 .logoImage {
   height: 12vh;
   display: flex;
@@ -132,15 +137,19 @@ textarea {
   display: flex;
   width: 215px;
   height: 450px;
-  
+  color: #28271d;
   flex-direction: column;
+  flex: 0 0 auto;
 }
 
 .productPrice {
   text-align: left;
   padding-left: 5px;
   color: #e47271;
-  height: 25px;
+  font-weight: bold;
+  font-size: 1.5em;
+  margin-bottom: 5px;
+  
   
 
 
@@ -148,12 +157,14 @@ textarea {
 
 .productName {
   width: 215px;
-  height: 50px;
+  font-size: 1em;
+  font-weight: 700;
   padding-left: 5px;
   text-align: left;
-  
+  color: #28271d;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  margin-bottom: 5px;
   
 }
 
@@ -167,14 +178,18 @@ textarea {
   height: 340px;
   border-radius: 15px;
   width: 215px;
+  background-color: white;
 }
 
 .mainProductPage {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+  flex-direction: row; /* уже есть */
+  flex-wrap: wrap; /* это ключевое! */
+  justify-content: left;
+  gap: 20px; /* вместо margin между карточками */
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
   
   
 }
@@ -230,6 +245,39 @@ textarea {
 
 
 @media (max-width: 768px) {
+  .productCard {
+    width: 48%; /* 2 карточки в ряд с учетом gap */
+    height: auto; /* Автоматическая высота */
+    margin-top: 4px;
+    
+  }
+
+  .productImage {
+    width: 100%!important; /* Ширина по родителю */
+    height: 250px!important; /* Фиксированная высота */
+    border-radius: 12px;
+    object-fit: cover; /* Сохраняет пропорции изображения */
+  }
+
+  .productName {
+    width: 100%!important;
+    font-size: 0.9em; /* Уменьшенный размер текста */
+    
+  }
+
+  .productPrice {
+    font-size: 1.2em; /* Уменьшенный размер цены */
+    padding-left: 0;
+    
+  }
+
+  /* Дополнительные корректировки для контейнера */
+  .mainProductPage {
+    gap: 11px;
+    padding: 7px;
+    
+  }
+
   .mainDiv {
     width: 100vw;
   }

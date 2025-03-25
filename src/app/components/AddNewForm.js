@@ -1,10 +1,9 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { createClient } from '@supabase/supabase-js'
 
 import supabase from './Supabase'
-
+const supabaseUrl = 'https://eddnkmvlagibcvzmmgeu.supabase.co';
 const AddNewForm = () => {
   const [pageLoaded, setPageLoaded] = useState(false) // хук состояния для отслеживания загрузки страницы
   const { register, handleSubmit, formState: { errors } } = useForm()

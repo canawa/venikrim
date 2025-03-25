@@ -22,10 +22,11 @@ const ProductList = () => {
 
 
   return (
-    <div className="productsContainer">
+    <div className="mainProductPage">
       {products.map ((productData)=> ( // используем круглые скобки (типо можно не писать return, он сам возвращает так как значение единственное)
         <ProductCard // наш компонент с карточкой продукта
           key={productData.id} // из массива products объект, который обрабатывается ерез map, и чтобы обращаться к ключам, введем местную переменную productData
+          id = {productData.id}
           name={productData.Название}
           image={productData.Картинка} 
           price={productData.Цена}

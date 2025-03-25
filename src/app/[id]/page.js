@@ -3,17 +3,15 @@ import React from "react";
 import supabase from "../components/Supabase";
 import { useEffect } from "react";
 import { set } from "react-hook-form";
-
+import { useRouter } from "next/navigation";
 
 
 export default function ProductPage({params}) {
-    let [productName, setProductName] = React.useState('')
-    let [productDescription, setProductDescription] = React.useState('')
-    let [productPrice, setProductPrice] = React.useState('')
-    let [productImage, setProductImage] = React.useState('')
+    let [product, setProduct] = React.useState('')
     
-    useEffect( async ()=> {
-        
+    
+    useEffect( ()=> {
+        async function fetchData() {
         const { data, error } = await supabase
         .from('products')
         .select('*')
@@ -23,22 +21,23 @@ export default function ProductPage({params}) {
     console.log(error)
     } else {
     console.log(data)
-    setProductName(data.Название)
-    setProductDescription(data.Описание)
-    setProductPrice(data.Цена)
-    setProductImage(data.Картинка)
-    console.log(productImage)
+    setProduct(data)
+    }
+    if (!data?.id) {
+      window.location.href = '/'
+    }
 }
+fetchData()
 
     },[])
     
     return (
         
       <div>
-        <h1>{productName}</h1>
-        <h2>{productDescription}</h2>
-        <h3>{productPrice}₽</h3>
-        <img src={productImage} alt="Product Image" className="productImageOnProductPage"/>
+        <h1>{product.Название}</h1>
+        <h2>{product.Описание}</h2>
+        <h3>{product.Цена}₽</h3>
+        <img src={product.Картинка} alt="Product Image" className="productImageOnProductPage"/>
       </div>
     );
   }

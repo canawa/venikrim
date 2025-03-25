@@ -5,7 +5,7 @@ import ProductCard from "./components/ProductCard";
 import ProductList from "./components/productList";
 export default function Home() {
   return (
-    <div className="mainProductPage"> 
+    <div className="mainProductPage" > 
        <ProductList/>
        </div>
     
