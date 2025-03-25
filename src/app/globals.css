@@ -77,6 +77,7 @@ body {
 
 .link {
   text-decoration: none;
+  color: black
 }
 
 .logoImage {
@@ -133,7 +134,7 @@ textarea {
 }
 
 .productCard {
-  margin-top: 50px;
+  
   display: flex;
   width: 215px;
   height: 450px;
@@ -161,7 +162,13 @@ textarea {
 }
 
 
-
+.productInfo:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  border-radius: 10px;
+}
 
 .productName {
   width: 215px;
@@ -176,13 +183,74 @@ textarea {
   
   
   
+  
+}
+ 
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: #14c251;
+  color: white;
+  padding-left: 5px;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 40px black;
+}
+
+.description {
+  font-size: 0.9rem;
+  padding-left: 5px;
+  text-align: left;
+  color: #28271d;
+  font-weight: 500;
+  margin-bottom: 5px;
+  white-space: pre-line;
+}
+
+.sideContainer {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100%;
+}
+
+.productDetails {
+  display: flex;
+  flex-direction: row;
+  margin: 50px;
+  justify-content: space-between;
+  
+  
+}
+
+.productDetailsInfo {
+  display: flex;
+  flex-direction: column;
+  
+  background-color: rgba(255, 255, 255, 0.363) ;
+  padding: 40px;
+  height:fit-content;
+  border-radius: 15px;
+  color:black;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .productImageOnProductPage {
   border-radius: 15px;
-  width: 400px;
-  height: 550px;
+  width: 520px;
+  height: 715px;
+  background-color: white;
 }
+
+.productImageOnProductPage:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
 
 .productImage {
   height: 340px;
@@ -204,6 +272,31 @@ textarea {
   
 }
 
+.buyButton {
+  display: flex;
+  justify-content: center;
+  background-color: #db7953;
+  border-radius: 15px;
+  color : black;
+  width: 50%;
+  padding: 15px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.buyButton:hover {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+  animation: ease-out 0.3s;
+  cursor: pointer;
+}
+
+.buyInfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  
+
+}
 
 @media (max-width: 1650px) {
   .about { 
@@ -255,6 +348,69 @@ textarea {
 
 
 @media (max-width: 768px) {
+  .productDetails {
+    flex-direction: column;
+    margin: 15px;
+    align-items: center;
+  }
+
+  .productImageOnProductPage {
+    width: 100%;
+    height: auto;
+    
+    border-radius: 10px;
+  }
+
+  .sideContainer {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 20px;
+  }
+
+  .productDetailsInfo {
+    padding: 20px;
+    margin: 0;
+  }
+
+  .productDetailsInfo h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .price {
+    font-size: 1.4rem;
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .description {
+    font-size: 1rem;
+    padding: 10px;
+    text-align: justify;
+  }
+
+ 
+}
+
+@media (max-width: 480px) {
+  .productDetailsInfo h1 {
+    font-size: 1.5rem;
+  }
+
+  .price {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .productImageOnProductPage {
+    
+    object-fit: contain;
+  }
+  
+  
   .productCard {
     width: 48%; /* 2 карточки в ряд с учетом gap */
     height: auto; /* Автоматическая высота */

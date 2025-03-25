@@ -4,7 +4,7 @@ import supabase from "../components/Supabase";
 import { useEffect } from "react";
 import { set } from "react-hook-form";
 import { useRouter } from "next/navigation";
-
+import Link from "next/link";
 
 export default function ProductPage({params}) {
     let [product, setProduct] = React.useState('')
@@ -33,11 +33,21 @@ fetchData()
     
     return (
         
-      <div>
+      <div className='productDetails'>
+        <div>
+          <img src={product.Картинка} alt="Product Image" className="productImageOnProductPage"/>
+        </div>
+        <div className="sideContainer">
+        <div className="productDetailsInfo">
         <h1>{product.Название}</h1>
-        <h2>{product.Описание}</h2>
-        <h3>{product.Цена}₽</h3>
-        <img src={product.Картинка} alt="Product Image" className="productImageOnProductPage"/>
+        <h3 className="price">Цена: {product.Цена}₽</h3>
+        <div className="buyInfo">
+        <h4 className="buyButton"> <Link className='link'href='/order'>КУПИТЬ</Link></h4>
+          <h4 className="inStock">• В наличии</h4>
+        </div>
+        </div>
+        <h6 className="description">{product.Описание}</h6>
+        </div>
       </div>
     );
   }

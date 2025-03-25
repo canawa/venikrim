@@ -6,10 +6,11 @@ const ProductCard = ({ id, name, image, price, description }) => {
     <div className="productCard">
       <Link className="link" href={`/${id}`}>
       <img className="productImage" src={image} alt={name} />
+      <div className="productInfo">
       <div className="productPrice">{price} ₽ </div>
       <div className="productName">{name}</div>
       <div className="inStock"> • В наличии</div>
-      
+      </div>
       
       
       </Link>
