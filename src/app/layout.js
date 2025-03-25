@@ -4,6 +4,7 @@ import './globals.css';
 import Link from "next/link";
 import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
+import Footer from "./components/Footer";
 const marmelad = Marmelad({
   subsets: ["latin", 'cyrillic'],
   weight: ['400'],
@@ -30,8 +31,9 @@ export default function RootLayout({ children }) {
           
           </div>
           {children}
+          <div className="footerSettings"><Footer/></div>
           </div>   
-          
+         
         
       </body>
     </html>
