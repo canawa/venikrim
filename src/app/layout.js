@@ -1,3 +1,4 @@
+
 import { Marmelad } from "next/font/google";
 import './globals.css';
 import Link from "next/link";
@@ -13,13 +14,13 @@ const marmelad = Marmelad({
 
 
 export const metadata = {
-  title: "Create Next App",
+  title: "Веники и метлы в Крыму!",
   description: "Лучшие веники и мётлы в Крыму!",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html>
       <body
         className={marmelad.className}>
           
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
           </div>
           {children}
           </div>   
+          
         
       </body>
     </html>
