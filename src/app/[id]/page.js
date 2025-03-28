@@ -1,8 +1,11 @@
 'use client'
+
 import React from "react";
 import supabase from "../components/Supabase";
 import { useEffect } from "react";
 import { set } from "react-hook-form";
+import { NextSeo } from "next-seo";
+import Head from "next/head";
 import { useRouter } from "next/navigation";
 import { Nunito } from "next/font/google";
 const marck  = Nunito({
@@ -10,6 +13,9 @@ const marck  = Nunito({
   weight: ["900"],
 });
 import Link from "next/link";
+
+
+
 
 export default function ProductPage({params}) {
     let [product, setProduct] = React.useState('')
@@ -31,14 +37,30 @@ export default function ProductPage({params}) {
     if (!data?.id) {
       window.location.href = '/'
     }
+
+  
 }
 fetchData()
 
     },[])
+
     
+useEffect (() => {
+  if (product.Название) {
+    document.title = product.Название + ' В Крыму (Симферополе) за ' + product.Цена + '₽'
+    document.description = 'Веники и метлы в Крыму! (Симферополь) ' + product.Название + ' за ' + product.Цена + '₽'
+  } else {
+    document.title = 'Веники и метлы в Крыму! (Симферополь)'
+    document.description = 'Веники и метлы в Крыму! (Симферополь) ' + product.Название + ' за ' + product.Цена + '₽'
+  }
+
+
+})
+
     return (
         
       <div className='productDetails'>
+        
         <div>
           <img src={product.Картинка} alt="Product Image" className="productImageOnProductPage"/>
         </div>
@@ -56,3 +78,7 @@ fetchData()
       </div>
     );
   }
+  
+ 
+  
+
