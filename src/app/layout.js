@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
 import Footer from "./components/Footer";
 import { useEffect } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const marmelad = Marmelad({
   subsets: ["latin", 'cyrillic'],
   weight: ['400'],
