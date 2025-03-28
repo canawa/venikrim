@@ -567,7 +567,9 @@ img {
     margin: 15px;
     align-items: center;
   }
-
+img {
+  object-fit: contain;
+}
   .productImageOnProductPage {
     width: 100%;
     height: auto;

@@ -7,7 +7,7 @@ function CallMeForm() {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (data) => {
-    const { error } = await supabase.from('callme')
+    const { error } = await supabase.from('info')
       .insert({
         name: data.name,
         phone: data.phone,
@@ -15,9 +15,10 @@ function CallMeForm() {
       });
       
     if (error) {
+      console.log(error)
       alert('Ошибка: ' + error.message);
     } else {
-      alert('Данные отправлены!');
+      alert('Данные отправлены!');  
       reset();
     }
   };
