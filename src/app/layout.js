@@ -1,5 +1,6 @@
 'use client'
 import { Marmelad } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react"
 import './globals.css';
 import { DefaultSeo, NextSeo } from "next-seo";
 import Link from "next/link";
