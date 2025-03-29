@@ -1,0 +1,8 @@
+{
+    "functions": {
+      "src/app/api/cronjob/route.js": {
+        "runtime": "edge",
+        "schedule": "@hourly"
+      }
+    }
+  }
