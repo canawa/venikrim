@@ -11,8 +11,7 @@ const ProductCard = ({ id, name, image, price, description }) => {
             className="productImage"
             src={image}
             alt={name}
-            width={215} // или нужные размеры
-            height={340} // или нужные размеры
+            
             loading="lazy" // по умолчанию lazy loading
             placeholder="blur" // добавление эффекта размытия до загрузки
             blurDataURL="data:image/png;base64,..." // опционально: маленькое размытие
