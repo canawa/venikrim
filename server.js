@@ -61,7 +61,7 @@ async function checkNewRows() {
 }
 
 // Запускаем проверку каждые 5 секунд
-setInterval(checkNewRows, 36000);
+setInterval(checkNewRows, 10000);
 const { data, error } = await supabase
   .from('info')
   .select('*')
