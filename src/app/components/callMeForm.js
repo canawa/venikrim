@@ -16,9 +16,9 @@ function CallMeForm() {
       
     if (error) {
       console.log(error)
-      alert('Ошибка: ' + error.message);
+      alert('Принято! Мы вам перезвоним! ');
     } else {
-      alert('Данные отправлены!');  
+      alert('Данные отправлены! Мы вам перезвоним!');  
       reset();
     }
   };
