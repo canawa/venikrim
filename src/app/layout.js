@@ -77,6 +77,8 @@ export default function RootLayout({ children }) {
   
 
           {children}
+          <Analytics />
+          <SpeedInsights />
           <div className="footerSettings"><Footer/></div>
           </div>   
          
