@@ -73,7 +73,7 @@ useEffect (() => {
           <h4 className="inStock">• В наличии</h4>
         </div>
         </div>
-        <h6 className="description">{product.Описание}</h6>
+        <h4 className="description">{product.Описание}</h4>
         </div>
       </div>
     );
