@@ -12,7 +12,7 @@ const Header = () => {
     <div className="logo">
    <Link href='/'><img src='/logo.png' className="logoImage"/></Link>
     </div>
-     <div className="about"> <h1>ВЕНИКРЫМ.RU</h1> </div>
+     <div className="about"> <h1>VENIKRIM.RU</h1> </div>
     <div className="cart" >
      
      <Link href='/order' className={marmelad.className}><button className="buttonCart" > Заказать</button></Link>

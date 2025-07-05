@@ -6,7 +6,7 @@ function Footer() {
     <footer className="footer-container">
       <div className="footer-content">
         <div className="footer-section">
-          <h3 className="company-name">ВЕНИКРЫМ.РФ</h3>
+          <h3 className="company-name">VENIKRIM.RU</h3>
           <p className="company-slogan">Лучшие веники в Крыму!</p>
         </div>
 
