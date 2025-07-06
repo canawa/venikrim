@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🧹 VENIKRIM.RU – Онлайн-магазин веников из Крыма
+Это репозиторий фронтенда сайта https://www.venikrim.ru/ — небольшого интернет-магазина по продаже хозяйственных веников. Сайт разработан с использованием Next.js и Supabase для управления данными и формой заявок.
 
-## Getting Started
+🚀 Технологии
+Next.js — фреймворк для React-приложений с SSR и удобной маршрутизацией
+Supabase — бэкенд как сервис: база данных (PostgreSQL), аутентификация и API
+Vercel — хостинг (опционально)
 
-First, run the development server:
+🛠 Функционал
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1.Просмотр каталога веников с ценами и наличием
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Форма заявки: имя, телефон, сообщение
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Отправка формы на Supabase и отображение обратной связи 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Получение сообщений пользователей в Телеграмм
 
-## Learn More
+5. Адаптивный и минималистичный дизайн 
 
-To learn more about Next.js, take a look at the following resources:
+6. Контактные данные и адрес на странице
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+📬 Обратная связь
+Данные из формы отправляются в Телеграмм. При необходимости можно настроить email-уведомления или SMS-уведомления
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📱 Адаптивность
+Сайт полностью адаптирован под:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📱 Смартфоны
+
+📱 Планшеты
+
+💻 Десктопы
+
+Интерфейс подстраивается под размер экрана, обеспечивая удобство использования на любых устройствах.
+
+![image](https://github.com/user-attachments/assets/9efcf14a-9113-4e67-9d8c-35fe088a65e0)
+![image](https://github.com/user-attachments/assets/0ade901c-ded6-49c9-a219-473e965e3b26)
+![image](https://github.com/user-attachments/assets/fec69856-5890-4252-a1fa-df494d76dfc5)
+
