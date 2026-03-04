@@ -1,26 +1,15 @@
 'use client'
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import supabase from './Supabase';
 
 function CallMeForm() {
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = async (data) => {
-    const { error } = await supabase.from('info')
-      .insert({
-        name: data.name,
-        phone: data.phone,
-        message: data.message
-      });
-      
-    if (error) {
-      console.log(error)
-      alert('Принято! Мы вам перезвоним! ');
-    } else {
-      alert('Данные отправлены! Мы вам перезвоним!');  
-      reset();
-    }
+    // TODO: сохранение заявки в локальную БД (API)
+    console.log('Заявка:', data)
+    alert('Данные отправлены! Мы вам перезвоним!')
+    reset()
   };
 
   return (

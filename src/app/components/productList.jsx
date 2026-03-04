@@ -1,24 +1,17 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
-import supabase from './Supabase';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
-  useEffect(()=>{
-    const fetchProducts = async() => {
-        const {data,error} = await supabase.from('products').select('*')
-        if (error) {
-            console.log(error)
-        } else {
-            setProducts(data)
-            console.log(data)
-        }
+  useEffect(() => {
+    const fetchProducts = async () => {
+      // TODO: загрузка товаров из локальной БД (API или прямой запрос)
+      setProducts([])
     }
     fetchProducts()
-    
-  },[])
+  }, [])
 
 
   return (
