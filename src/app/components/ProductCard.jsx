@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+
 const ProductCard = ({ id, name, image, price, description }) => {
   return (
     
@@ -11,7 +12,6 @@ const ProductCard = ({ id, name, image, price, description }) => {
       <div className="productName">{name}</div>
       <div className="inStock"> • В наличии</div>
       </div>
-      
       
       </Link>
     </div>

@@ -10,7 +10,7 @@ const AddNewForm = () => {
   function pageLoading(params) {
     setTimeout(() => {
       setPageLoaded(params)
-    }, 4000)
+    }, 200)
   }
 
   useEffect(() => {
@@ -24,13 +24,24 @@ const AddNewForm = () => {
   }
 
   const onSubmit = async (data) => {
-    if (!selectedFile) {
-      alert('Прикрепи картинки!!!')
-      return
-    }
+
     // TODO: загрузка файла и сохранение товара в локальную БД (API)
-    console.log('Товар:', { ...data, file: selectedFile.name })
-    alert('Подключите локальную БД для добавления товаров.')
+    const response = await fetch('http://localhost:8000/add_product/', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    const dataResponse = await response.json()
+    if (dataResponse.status === 'success') {
+      alert('Товар добавлен')
+    }
+    else {
+      alert('Ошибка при добавлении товара')
+    }
+
   }
 
   return (
@@ -38,16 +49,17 @@ const AddNewForm = () => {
       {pageLoaded ? (
         <div>
           <form onSubmit={handleSubmit(onSubmit)}>
-            Название: <input 
+            Название: <input className='form-input'
               placeholder="Веник трехлучевой..." 
-              {...register('productName', {
+              {...register('name', {
                 required: 'Это поле обязательно для заполнения'
               })}
             /> 
-            {errors.productName && <span style={{ color: 'red' }}>{errors.productName.message}</span>}
+            {errors.name && <span style={{ color: 'red' }}>{errors.name.message}</span>}
             <br/>
             
             Описание: <textarea 
+              className='form-input'
               placeholder="Описание..." 
               {...register('description', {
                 required: 'Это поле обязательно к заполнению!'
@@ -56,13 +68,16 @@ const AddNewForm = () => {
             {errors.description && <span style={{ color: 'red' }}>{errors.description.message}</span>}
             <br/>
             
-            Картинка товара: <input 
-              type="file" 
-              onChange={handleFileChange}
+            Картинка товара (ссылка): <input 
+              className='form-input' 
+              {...register('picture', {
+                required: 'Это поле обязательно для заполнения'
+              })}
             /> 
               
             
             Цена: <input 
+              className='form-input'
               {...register('price', {
                 required: 'Это поле обязательно для заполнения'
               })}

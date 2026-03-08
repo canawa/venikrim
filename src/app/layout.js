@@ -75,7 +75,7 @@ export default function RootLayout({ children }) {
           
           </div>
   
-          <div style={{width: '100%',height: '100%',display: 'flex',justifyContent: 'center',alignItems: 'center'}}>
+          <div className="mainContent">
           {children}
           </div>
 

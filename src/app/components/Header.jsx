@@ -15,7 +15,7 @@ const Header = () => {
      <div className="about"> <h1>VENIKRIM.RU</h1> </div>
     <div className="cart" >
      
-     {/* <Link href='/order' className={marmelad.className}><button className="buttonCart" > Заказать</button></Link> */}
+     <Link href='/order' className={marmelad.className}><button className="buttonCart" > Заказать</button></Link>
     </div>
 
  </header>

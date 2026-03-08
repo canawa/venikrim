@@ -96,12 +96,21 @@ body {
 
 
 .mainDiv {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  height: 110%;
   min-height: 100vh;
   width: 70vw;
   background-color: #E8D8B9;
   color: #2D3748;
+}
+
+.mainContent {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form {
@@ -124,6 +133,11 @@ form {
   font-size: 1rem;
   background: #ffffb5;
   transition: all 0.3s ease-in-out;
+}
+
+.contact-item {
+  text-align: left;
+  padding-left: 5px;
 }
 
 textarea {
@@ -227,10 +241,11 @@ textarea {
 .productDetails {
   display: flex;
   flex-direction: row;
-  margin: 50px;
-  justify-content: space-between;
-  
-  
+  margin: 50px auto;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  max-width: 100%;
 }
 
 .productDetailsInfo {
@@ -599,6 +614,7 @@ img {
     width: 100%;
     max-width: 500px;
     margin-top: 20px;
+    
   }
 
   .productDetailsInfo {
