@@ -1,13 +1,14 @@
 'use client'
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
+import { API_URL } from '../config';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch('http://localhost:8000/get_products/', {method: 'GET', credentials: 'include', headers: { 'Content-Type': 'application/json' } })
+      const response = await fetch(`${API_URL}/get_products/`, { method: 'GET', credentials: 'include', headers: { 'Content-Type': 'application/json' } })
         const data = await response.json()
         console.log(data)
         setProducts(data)

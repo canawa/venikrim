@@ -4,10 +4,11 @@ import React from "react"
 import { useEffect } from "react"
 import AddNewForm from "../components/AddNewForm"
 import { useRouter } from 'next/navigation'
+import { API_URL } from "../config"
 
 const checkToken = async (router) => {
   
-  const res = await fetch('http://localhost:8000/admin_login_check/', {
+  const res = await fetch(`${API_URL}/admin_login_check/`, {
     credentials: 'include'
   })
   const data = await res.json()

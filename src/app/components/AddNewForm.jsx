@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { API_URL } from '../config'
 
 const AddNewForm = () => {
   const [pageLoaded, setPageLoaded] = useState(false)
@@ -26,7 +27,7 @@ const AddNewForm = () => {
   const onSubmit = async (data) => {
 
     // TODO: загрузка файла и сохранение товара в локальную БД (API)
-    const response = await fetch('http://localhost:8000/add_product/', {
+    const response = await fetch(`${API_URL}/add_product/`, {
       method: 'POST',
       body: JSON.stringify(data),
       credentials: 'include',

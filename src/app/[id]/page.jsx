@@ -13,6 +13,7 @@ const marck = Nunito({
 
 
 import Link from "next/link";
+import { API_URL } from "../config";
 
 export default function ProductPage({ params }) {
   const [product, setProduct] = React.useState({})
@@ -22,7 +23,7 @@ export default function ProductPage({ params }) {
 
     async function fetchData() {
       try {
-        const response = await fetch(`http://localhost:8000/get_products/${id}`, {
+        const response = await fetch(`${API_URL}/get_products/${id}`, {
           method: 'GET',
           headers: { 'Content-Type': 'application/json' },
         })

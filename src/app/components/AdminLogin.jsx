@@ -3,6 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
+import { API_URL } from '../config'
 
 const AdminLogin = () => {
     const {register,handleSubmit,reset} = useForm()
@@ -11,7 +12,7 @@ const AdminLogin = () => {
         console.log('Login:', data['login'])
         console.log('Password:', data['password'])
 
-        fetch('http://localhost:8000/login/admin_login/', { // делаем запрос к API
+        fetch(`${API_URL}/login/admin_login/`, {
             method: 'POST', 
             body: JSON.stringify(data), 
             credentials: 'include',// отправляем данные в формате JSON (оборачиваем data в JSON)
