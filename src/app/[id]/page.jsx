@@ -11,7 +11,6 @@ const marck = Nunito({
   weight: ["900"],
 });
 
-
 import Link from "next/link";
 import { API_URL } from "../config";
 
