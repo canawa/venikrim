@@ -16,7 +16,7 @@ import { API_URL } from "../config";
 
 export default function ProductPage({ params }) {
   const [product, setProduct] = React.useState({})
-  const {id} = use(params)
+  const { id } = use(params) // из params берем id
 
   useEffect(() => {
 
