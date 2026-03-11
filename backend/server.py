@@ -11,13 +11,17 @@ from datetime import datetime
 create_table()
 
 app = FastAPI()
-# Если клиент и сервер на разных доменах, то нужно добавить middleware для CORS (Cross-Origin Resource Sharing)
+
+origins = [
+    "https://www.venikrim.ru",  # фронт на Vercel
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://venikrim.ru"], # ПОМЕНЯТЬ В ПРОДАКШЕНЕ
-    allow_credentials=True, # позволяет отправлять cookies и другие аутентификационные данные
-    allow_methods=["*"], # позволяет использовать все методы HTTP
-    allow_headers=["*"], # позволяет использовать все заголовки
+    allow_origins=origins,      # не "*", а конкретный фронт
+    allow_credentials=True,      # если куки / авторизация
+    allow_methods=["*"],         # все HTTP методы
+    allow_headers=["*"],         # все заголовки
 )
 
 
