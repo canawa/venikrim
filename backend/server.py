@@ -14,7 +14,7 @@ app = FastAPI()
 # Если клиент и сервер на разных доменах, то нужно добавить middleware для CORS (Cross-Origin Resource Sharing)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # ПОМЕНЯТЬ В ПРОДАКШЕНЕ
+    allow_origins=["https://www.venikrim.ru"], # ПОМЕНЯТЬ В ПРОДАКШЕНЕ
     allow_credentials=True, # позволяет отправлять cookies и другие аутентификационные данные
     allow_methods=["*"], # позволяет использовать все методы HTTP
     allow_headers=["*"], # позволяет использовать все заголовки
