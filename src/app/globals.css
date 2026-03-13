@@ -670,7 +670,7 @@ img {
 
   .productImage {
     width: 100%!important; /* Ширина по родителю */
-    height: 250px!important; /* Фиксированная высота */
+    height: 100%!important; /* Фиксированная высота */
     border-radius: 12px;
     object-fit: cover; /* Сохраняет пропорции изображения */
   }
