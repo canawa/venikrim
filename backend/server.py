@@ -10,7 +10,7 @@ import sqlite3 as sq
 from datetime import datetime
 create_table()
 
-app = FastAPI()
+app = FastAPI(redirect_slashes=False)
 
 origins = [
     "https://venikrim.ru",
