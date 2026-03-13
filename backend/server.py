@@ -13,9 +13,9 @@ create_table()
 app = FastAPI()
 
 origins = [
-    "https://www.venikrim.ru",  # фронт на Vercel
+    "https://venikrim.ru",
+    "https://www.venikrim.ru",
 ]
-
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,      # не "*", а конкретный фронт
