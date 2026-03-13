@@ -665,14 +665,16 @@ img {
     width: 48%; /* 2 карточки в ряд с учетом gap */
     height: auto; /* Автоматическая высота */
     margin-top: 4px;
+    overflow: hidden; /* Чтобы изображение не выходило за границы */
     
   }
 
   .productImage {
-    width: 100%!important; /* Ширина по родителю */
-    height: 100%!important; /* Фиксированная высота */
+    width: 100% !important; /* Ширина по родителю */
+    height: auto !important; /* Автоматическая высота по содержимому */
     border-radius: 12px;
-    object-fit: cover; /* Сохраняет пропорции изображения */
+    object-fit: cover; /* Сохраняет пропорции изображения и заполняет блок */
+    display: block;
   }
 
   .productName {
