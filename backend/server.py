@@ -38,7 +38,7 @@ def get_products_id(product_id: int):
         return dict(zip(columns, row))
 
 
-@app.get('/get_products/')
+@app.get('/get_products')
 def get_products():
     with sq.connect("venikrim.db") as con:
         cur = con.cursor()
