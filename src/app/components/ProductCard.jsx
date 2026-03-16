@@ -10,7 +10,8 @@ const ProductCard = ({ id, name, image, price, description }) => {
         className="productImage"
         src={image}
         alt={name}
-
+        placeholder="blur"
+        blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMUUlYuAAABcQDKNaly6QAAAABJRU5ErkJggg=="
         quality={50}
         width={215}
         height={300}
