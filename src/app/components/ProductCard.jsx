@@ -14,7 +14,7 @@ const ProductCard = ({ id, name, image, price, description }) => {
         blurDataURL="data:image/webp;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mMUUlYuAAABcQDKNaly6QAAAABJRU5ErkJggg=="
         quality={50}
         width={215}
-        height={300}
+        height={340}
         priority
       />
       <div className="productInfo">
