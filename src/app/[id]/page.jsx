@@ -63,9 +63,8 @@ useEffect(() => {
           <img
             src={`${API_URL}/${product?.image}`}
             alt={product?.name || 'Изображение товара'}
-            loading="eager"
-            fetchpriority="high"
             className="productImageOnProductPage"
+            fetchpriority="high"
           /> 
         </div>
         <div className="sideContainer">
