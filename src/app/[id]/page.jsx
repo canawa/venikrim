@@ -60,7 +60,11 @@ useEffect(() => {
       <div className='productDetails'>
         
         <div>
-          <img src={`${API_URL}/images/${product?.image}`} alt="Product Image" className="productImageOnProductPage"/> 
+          <img
+            src={`${API_URL}/images/${product?.image}`}
+            alt={product?.name || 'Изображение товара'}
+            className="productImageOnProductPage"
+          /> 
         </div>
         <div className="sideContainer">
         <div className="productDetailsInfo">

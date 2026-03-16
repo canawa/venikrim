@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <header className="header" align="left">
     <div className="logo">
-   <Link href='/'><img src='/logo.png' className="logoImage"/></Link>
+   <Link href='/'><img src='/logo.png' className="logoImage" alt="Логотип Venikrim"/></Link>
     </div>
      <div className="about"> <h1>VENIKRIM.RU</h1> </div>
     <div className="cart" >
