@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import { API_URL } from '../config';
-import Image from 'next/image';
+
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);

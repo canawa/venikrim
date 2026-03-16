@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { Marmelad } from "next/font/google";
-import Image from 'next/image';
+
 const marmelad = Marmelad({
   subsets: ["latin", 'cyrillic'],
   weight: ['400'],

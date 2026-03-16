@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import { DefaultSeo, NextSeo } from "next-seo";
 import Link from "next/link";
 import ProductCard from "./components/ProductCard";
