@@ -1,0 +1,25 @@
+User-agent: *
+# Разрешаем индексировать почти всё
+Disallow: /admin/
+Disallow: /order/thanks
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+Disallow: /images/tmp/
+Disallow: /tmp/
+
+# Запрещаем индексировать параметры с сортировкой/фильтрацией (если будут)
+Disallow: /*?*sort=
+Disallow: /*?*page=
+Disallow: /*?*filter=
+
+# Разрешаем важные разделы
+Allow: /
+Allow: /order
+Allow: /images/
+
+# Основная версия домена
+Host: https://venikrim.ru
+
+# Карта сайта
+Sitemap: https://venikrim.ru/sitemap.xml

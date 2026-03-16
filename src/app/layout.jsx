@@ -75,9 +75,9 @@ export default function RootLayout({ children }) {
           
           </div>
   
-          <div className="mainContent">
+          <main className="mainContent">
           {children}
-          </div>
+          </main>
 
           <Analytics />
           <SpeedInsights />
