@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            { hostname: "venikrim.ru" },
+            { hostname: "www.venikrim.ru" },
+            { hostname: "api.venikrim.ru" },
+            { hostname: "localhost" }
+        ]
+    }
+}
 
-export default nextConfig;
+export default nextConfig

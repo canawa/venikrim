@@ -20,20 +20,33 @@ const AddNewForm = () => {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0]
+
+    if (file && file.type !== 'image/webp') {
+      alert('Можно загрузить только WEBP-файл')
+      e.target.value = ''
+      setSelectedFile(null)
+      return
+    }
+
     setSelectedFile(file)
-    console.log(file)
   }
 
   const onSubmit = async (data) => {
+    if (!selectedFile) {
+      alert('Пожалуйста, выберите WEBP-файл для картинки товара')
+      return
+    }
 
-    // TODO: загрузка файла и сохранение товара в локальную БД (API)
+    const formData = new FormData() // хз почему но для картинок нельзя просто в Json запихивать
+    formData.append('name', data.name) 
+    formData.append('description', data.description)
+    formData.append('price', data.price)
+    formData.append('picture', selectedFile)
+
     const response = await fetch(`${API_URL}/add_product/`, {
       method: 'POST',
-      body: JSON.stringify(data),
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      body: formData, // передаем форму с данными
+      credentials: 'include'
     })
     const dataResponse = await response.json()
     if (dataResponse.status === 'success') {
@@ -69,12 +82,16 @@ const AddNewForm = () => {
             {errors.description && <span style={{ color: 'red' }}>{errors.description.message}</span>}
             <br/>
             
-            Картинка товара (ссылка): <input 
+            Картинка товара (WEBP): <input 
+              type='file'
+              accept='image/webp'
               className='form-input' 
               {...register('picture', {
                 required: 'Это поле обязательно для заполнения'
               })}
+              onChange={handleFileChange}
             /> 
+            {errors.picture && <span style={{ color: 'red' }}>{errors.picture.message}</span>}
               
             
             Цена: <input 

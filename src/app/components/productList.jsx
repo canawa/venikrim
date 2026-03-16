@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import ProductCard from './ProductCard';
 import { API_URL } from '../config';
+import Image from 'next/image';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -22,7 +23,7 @@ const ProductList = () => {
           key={productData.id} // из массива products объект, который обрабатывается ерез map, и чтобы обращаться к ключам, введем местную переменную productData
           id = {productData.id}
           name={productData.name}
-          image={productData.image} 
+          image={`${API_URL}/images/${productData.image}`} // чтобы сделал запрос на сервер а не по относительному пути
           price={productData.price}
         />
       ))}

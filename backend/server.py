@@ -1,20 +1,24 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request, UploadFile, File, Form
 from fastapi.middleware.cors import CORSMiddleware
 from sql_tables import create_table
 from validation import Login, Product
 from auth import Auth
 from auth import create_jwt
-from fastapi import Request
 from auth import verify_jwt
 import sqlite3 as sq
 from datetime import datetime
+from pathlib import Path
+import shutil
+from fastapi.staticfiles import StaticFiles
+from uuid import uuid4
 create_table()
 
-app = FastAPI(redirect_slashes=False)
+app = FastAPI()
 
 origins = [
     "https://venikrim.ru",
     "https://www.venikrim.ru",
+    "http://localhost:3000"
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -23,6 +27,10 @@ app.add_middleware(
     allow_methods=["*"],         # все HTTP методы
     allow_headers=["*"],         # все заголовки
 )
+
+
+
+app.mount("/images", StaticFiles(directory=Path(__file__).resolve().parent.parent), name="images")
 
 
 @app.get('/get_products/{product_id}')
@@ -38,6 +46,10 @@ def get_products_id(product_id: int):
         return dict(zip(columns, row))
 
 
+        cur = con.cursor()
+        cur.execute("INSERT INTO products (created_at, name, description, price, picture) VALUES (?, ?, ?, ?, ?)", (datetime.now(), name, description, price, relative_path))
+        con.commit()
+    return {'status': 'success', 'message': 'Product added'}
 @app.get('/get_products/')
 def get_products():
     with sq.connect("venikrim.db") as con:
@@ -55,16 +67,42 @@ def get_products():
 
 # ADMIN PANEL
 @app.post('/add_product/')
-def add_product(request: Request, data: Product):
+async def add_product(
+    request: Request,
+    name: str = Form(...),
+    description: str = Form(...),
+    price: int = Form(...),
+    picture: UploadFile = File(...)
+):
     token = request.cookies.get('token')
-    if verify_jwt(token):
-        with sq.connect("venikrim.db") as con:
-            cur = con.cursor()
-            cur.execute("INSERT INTO products (created_at, name, desciption, price, picture) VALUES (?, ?, ?, ?, ?)", (datetime.now(), data.name, data.description, data.price, data.picture))
-            con.commit()
-            return {'status': 'success', 'message': 'Product added'}
-    else:
+
+    if not verify_jwt(token):
         return {'status': 'error', 'message': 'Invalid token'}
+
+    if picture.content_type != 'image/webp':
+        return {'status': 'error', 'message': 'Можно загружать только WEBP файлы'}
+
+    base_dir = Path(__file__).resolve().parent.parent
+    images_dir = base_dir / "images"
+    images_dir.mkdir(parents=True, exist_ok=True)
+
+    filename = f"{uuid4().hex}.webp"
+    file_path = images_dir / filename
+
+    with file_path.open("wb") as buffer:
+        shutil.copyfileobj(picture.file, buffer)
+
+    relative_path = f"images/{filename}"
+
+    with sq.connect("venikrim.db") as con:
+        cur = con.cursor()
+        cur.execute(
+            "INSERT INTO products (created_at, name, desciption, price, picture) VALUES (?, ?, ?, ?, ?)",
+            (datetime.now(), name, description, price, relative_path),
+        )
+        con.commit()
+
+    return {'status': 'success', 'message': 'Product added'}
 
 # AUTHENTICATION
         

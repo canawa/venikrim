@@ -1,12 +1,13 @@
 import React from "react";
 import Link from "next/link";
-
+import Image from 'next/image';
 const ProductCard = ({ id, name, image, price, description }) => {
   return (
     
     <div className="productCard">
       <Link className="link" href={`/${id}`}>
-      <img className="productImage" src={image} alt={name}  loading="lazy" />
+      <Image className="productImage" src={image} alt={name}  loading="lazy" quality={40} width={215} height={300} />
+    
       <div className="productInfo">
       <div className="productPrice">{price} ₽ </div>
       <div className="productName">{name}</div>
