@@ -13,7 +13,7 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "global": "^4.4.0",
-    "next": "^15.5.12",
+    "next": "^16.1.6",
     "next-seo": "^6.6.0",
     "next-sitemap": "^4.2.3",
     "node-fetch": "^3.3.2",
