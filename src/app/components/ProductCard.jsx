@@ -16,6 +16,7 @@ const ProductCard = ({ id, name, image, price, description }) => {
         width={215}
         height={340}
         priority
+        sizes="(max-width: 768px) 50vw, 215px"
       />
       <div className="productInfo">
       <div className="productPrice">{price} ₽ </div>
