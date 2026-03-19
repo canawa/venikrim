@@ -1,7 +1,5 @@
-// app/sitemap.ts
-import { MetadataRoute } from 'next'
-
-export default function sitemap(): MetadataRoute.Sitemap {
+// app/sitemap.js
+export default function sitemap() {
   return [
     {
       url: 'https://venikrim.ru',
@@ -15,6 +13,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    // добавляй сюда новые страницы по мере создания
   ]
 }
